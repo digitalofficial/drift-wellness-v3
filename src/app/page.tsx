@@ -91,10 +91,28 @@ function Nav() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+      {/* Hero background photo */}
+      <img
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbec6f?w=1600&h=900&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      />
+      {/* Dark gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom, rgba(8,12,20,0.75) 0%, rgba(8,12,20,0.85) 60%, #080C14 100%)",
+          zIndex: 1,
+        }}
+        aria-hidden="true"
+      />
+
       {/* Floating glass orbs */}
-      <div className="hero-glass-orb w-72 h-72 top-[15%] left-[8%] animate-float" aria-hidden="true" />
-      <div className="hero-glass-orb w-48 h-48 top-[60%] right-[12%] animate-float-delayed" aria-hidden="true" style={{ animationDelay: "2s" }} />
-      <div className="hero-glass-orb w-32 h-32 bottom-[20%] left-[25%] animate-float" aria-hidden="true" style={{ animationDelay: "4s" }} />
+      <div className="hero-glass-orb w-72 h-72 top-[15%] left-[8%] animate-float" aria-hidden="true" style={{ zIndex: 2 }} />
+      <div className="hero-glass-orb w-48 h-48 top-[60%] right-[12%] animate-float-delayed" aria-hidden="true" style={{ animationDelay: "2s", zIndex: 2 }} />
+      <div className="hero-glass-orb w-32 h-32 bottom-[20%] left-[25%] animate-float" aria-hidden="true" style={{ animationDelay: "4s", zIndex: 2 }} />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Badge */}
@@ -126,7 +144,7 @@ function Hero() {
       </div>
 
       {/* Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 py-4 marquee-container">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 py-4 marquee-container z-10">
         <div className="marquee-track">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 px-4">
