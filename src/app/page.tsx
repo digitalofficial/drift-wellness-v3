@@ -103,7 +103,7 @@ function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to bottom, rgba(8,12,20,0.75) 0%, rgba(8,12,20,0.85) 60%, #080C14 100%)",
+          background: "linear-gradient(to bottom, rgba(8,12,20,0.5) 0%, rgba(8,12,20,0.35) 60%, rgba(8,12,20,0.65) 100%)",
           zIndex: 1,
         }}
         aria-hidden="true"
@@ -121,7 +121,7 @@ function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6">
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 drop-shadow-lg" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
           Elevate{" "}
           <span className="shiny-text">your glow.</span>
         </h1>
